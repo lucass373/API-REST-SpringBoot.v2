@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "https://api-rest-springbootv2-production.up.railway.app")
 public class UserController {
     private final UserService userService;
     @Autowired
