@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "https://api-rest-springbootv2-production.up.railway.app")
 public class UserController {
     private final UserService userService;
     @Autowired
@@ -16,7 +17,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @CrossOrigin(origins = "https://api-rest-springbootv2-production.up.railway.app")
+
     @GetMapping(value = "/user")
     public User getUser(@RequestParam Integer id) {
         Optional<User> user = userService.getUserById(id);
@@ -24,20 +25,18 @@ public class UserController {
     }
 
 
-    @CrossOrigin(origins = "https://api-rest-springbootv2-production.up.railway.app")
     @PostMapping(value = "/createuser")
     public User createUser(@RequestBody User user) {
         Optional<User> createdUser = userService.createUser(user);
         return createdUser.orElse(null);
     }
 
-    @CrossOrigin(origins = "https://api-rest-springbootv2-production.up.railway.app")
+
     @GetMapping(value = "/listusers")
     public List<User> listUsers() {
         return userService.getAllUsers();
     }
 
-    @CrossOrigin(origins = "https://api-rest-springbootv2-production.up.railway.app")
     @DeleteMapping (value = "/removeuser")
     public String removeUser(@RequestParam Integer id) {
         boolean isRemoved = userService.removeUserById(id);
@@ -49,7 +48,7 @@ public class UserController {
         }
     }
 
-    @CrossOrigin(origins = "https://api-rest-springbootv2-production.up.railway.app")
+
     @PutMapping (value = "/updateuser")
     public String updateUser(@RequestParam Integer id, @RequestBody User user) {
         boolean isUpdated = userService.updateUser(id, user);
