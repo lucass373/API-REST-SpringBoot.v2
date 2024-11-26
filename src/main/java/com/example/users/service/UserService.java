@@ -70,5 +70,10 @@ public class UserService {
         return false;
     }
 
+    public boolean userExists(Integer id) {
+        // Verifica se existe algum usuário na lista com o ID fornecido
+        return userList.stream().anyMatch(user -> user.getId() == id);
+    }
+
 
 };

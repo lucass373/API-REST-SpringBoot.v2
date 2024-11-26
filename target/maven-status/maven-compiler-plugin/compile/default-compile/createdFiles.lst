@@ -2,3 +2,6 @@ com\example\users\UsersApplication.class
 com\example\users\api\UserController.class
 com\example\users\model\User.class
 com\example\users\service\UserService.class
+com\example\users\model\Task.class
+com\example\users\service\TaskService.class
+com\example\users\api\TaskController.class
